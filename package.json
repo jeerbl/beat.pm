@@ -1,0 +1,30 @@
+{
+  "name": "beat.pm",
+  "version": "1.0.0",
+  "description": "Calculate the BPM of any song by tapping to the beat and chart or export the data once finished.",
+  "private": true,
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeerbl/beat.pm.git"
+  },
+  "keywords": [
+    "bpm",
+    "beats",
+    "per",
+    "minute"
+  ],
+  "author": "Jérôme Brunel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeerbl/beat.pm/issues"
+  },
+  "homepage": "https://github.com/jeerbl/beat.pm#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^4.1.0"
+  }
+}
