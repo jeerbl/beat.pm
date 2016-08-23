@@ -10,14 +10,14 @@
     <meta name="author" content="Jérôme Brunel">
 
     <style type="text/css">@import url(https://fonts.googleapis.com/css?family=Roboto);html,body{margin:0;padding:0;font-size:14px;font-family:Roboto,Noto}body{text-align:center}header{width:auto;font-size:3rem;padding:1rem;background-color:gray}.bpm{font-size:8rem;padding:1rem}</style>
-    <script>document.addEventListener("click",function(e){alert("uboi")});</script>
+    <script>function newEntry(e){(e.keyCode===SPACE_KEY_CODE||"click"===e.type)&&calculateBPM(new Date)}function calculateBPM(e){if(null==previousDate)return void(previousDate=e);var n=Math.round(MINUTE/(e-previousDate)*10)/10;document.getElementById("bpm").innerHTML=n,bpms.push(n),previousDate=e}var SPACE_KEY_CODE=32,MINUTE=6e4,previousDate,bpms=[];document.onkeydown=newEntry,document.onclick=newEntry;</script>
   </head>
   <body>
     <header>
       Tap to the beat
     </header>
     <section>
-      <div class="bpm" id="bpm">151.5</div>
+      <div class="bpm" id="bpm">0</div>
       <div>beats/min</div>
     </section>
   </body>
