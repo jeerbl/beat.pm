@@ -3,22 +3,48 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-size: 14px;
-  font-family: Roboto, Noto;
-}
-
-body {
-  text-align: center;
+  font-size: 16px;
+  font-family: Roboto, Noto, sans-serif;
+  overflow: hidden;
 }
 
 header {
   width: auto;
-  font-size: 3rem;
+  font-size: 1.8rem;
   padding: 1rem;
-  background-color: gray;
+  background-color: #838383;
+}
+
+.more {
+  float: right;
+  position: relative;
+}
+
+.dropdown {
+  font-size: 1rem;
+  position: absolute;
+  margin-top: 0.5rem;
+  right: 0;
+  background-color: #a3a3a3;
+  display: none;
+}
+
+.dropdown ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown ul li {
+  white-space: nowrap;
+  padding: 1rem;
+}
+
+section {
+  text-align: center;
 }
 
 .bpm {
-  font-size: 8rem;
+  font-size: 7rem;
   padding: 1rem;
 }

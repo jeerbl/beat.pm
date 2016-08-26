@@ -9,15 +9,26 @@
     <meta name="keywords" content="bpm, tempo, beat, free">
     <meta name="author" content="Jérôme Brunel">
 
-    <style type="text/css">@import url(https://fonts.googleapis.com/css?family=Roboto);html,body{margin:0;padding:0;font-size:14px;font-family:Roboto,Noto}body{text-align:center}header{width:auto;font-size:3rem;padding:1rem;background-color:gray}.bpm{font-size:8rem;padding:1rem}</style>
-    <script>function newEntry(e){(e.keyCode===SPACE_KEY_CODE||"click"===e.type)&&calculateBPM(new Date)}function calculateBPM(e){if(null==previousDate)return void(previousDate=e);var n=Math.round(MINUTE/(e-previousDate)*10)/10;document.getElementById("bpm").innerHTML=n,bpms.push(n),previousDate=e}var SPACE_KEY_CODE=32,MINUTE=6e4,previousDate,bpms=[];document.onkeydown=newEntry,document.onclick=newEntry;</script>
+    <style type="text/css">@import url(https://fonts.googleapis.com/css?family=Roboto);html,body{margin:0;padding:0;font-size:16px;font-family:Roboto,Noto,sans-serif;overflow:hidden}header{width:auto;font-size:1.8rem;padding:1rem;background-color:#838383}.more{float:right;position:relative}.dropdown{font-size:1rem;position:absolute;margin-top:.5rem;right:0;background-color:#a3a3a3;display:none}.dropdown ul{list-style-type:none;margin:0;padding:0}.dropdown ul li{white-space:nowrap;padding:1rem}section{text-align:center}.bpm{font-size:7rem;padding:1rem}</style>
+    <script>window.onload=function(){function n(){m.adjust=!!s.checked}function e(n){n.stopPropagation(),y?r.style.display="none":r.style.display="block",y=!y}function o(n){n.stopPropagation()}function t(n){k=!0,(n.keyCode===u||"click"===n.type)&&d(new Date)}function d(n){if(null==c)return void(c=n);var e=Math.round(i/(n-c)*10)/10;if(m.adjust){for(var o=1;3>o&&null!=p[p.length-o];)e+=p[p.length-o],o++;e=Math.round(e/o*10)/10}a.innerHTML=e.toFixed(1),p.push(e),c=n}var c,u=32,i=6e4,a=document.getElementById("bpm"),l=document.getElementById("more"),r=document.getElementById("dropdown"),s=document.getElementById("adjust"),m={adjust:!!s.checked,previousBpmsToTake:3},p=[],y=!1,k=!1;l.onclick=e,r.onclick=o,adjust.onchange=n,document.onkeydown=t,document.onclick=t};</script>
   </head>
   <body>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-59248282-1', 'auto');ga('send', 'pageview');
     </script>
     <header>
-      Tap to the beat
+      <div class="more">
+        <span id="more">More</span>
+        <div class="dropdown" id="dropdown">
+          <ul>
+            <li>
+              <input type="checkbox" id="adjust">
+              <label for="adjust">Adjust with previous BPMs</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="title">Tap to the beat</div>
     </header>
     <section>
       <div class="bpm" id="bpm">0</div>
