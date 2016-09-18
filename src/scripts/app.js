@@ -1,5 +1,6 @@
 window.onload = function () {
   var SPACE_KEY_CODE = 32
+  var ENTER_KEY_CODE = 13
   var MINUTE = 60 * 1000
 
   /**
@@ -29,8 +30,8 @@ window.onload = function () {
 
   function toggleDropdown (e) {
     e.stopPropagation();
-    if (dropdownOpened) dropdown.style.display = 'none'
-    else dropdown.style.display = 'block'
+    if (dropdownOpened) dropdown.style.maxHeight = '0'
+    else dropdown.style.maxHeight = '3rem'
     dropdownOpened = !dropdownOpened
   }
 
@@ -39,10 +40,24 @@ window.onload = function () {
   }
 
   function newEntry (e) {
-    started = true
+    if (dropdownOpened) {
+      toggleDropdown(e)
+      return
+    }
     if (e.keyCode === SPACE_KEY_CODE || e.type === 'click') {
+      started = true
       calculateBPM(new Date())
     }
+    if (e.keyCode === ENTER_KEY_CODE) {
+      endSession()
+    }
+  }
+
+  function endSession () {
+    if (!started) return
+
+    started = false
+    alert('oihioioh')
   }
 
   function calculateBPM (date) {
