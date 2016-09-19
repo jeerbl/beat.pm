@@ -11,6 +11,7 @@ window.onload = function () {
    */
   var bpmDisplay = document.getElementById('bpm');
   var moreButton = document.getElementById('more');
+  var endButton = document.getElementById('end');
   var dropdown = document.getElementById('dropdown');
   var adjustCheckbox = document.getElementById('adjust');
   var graphElement = document.getElementById('graph');
@@ -65,7 +66,9 @@ window.onload = function () {
     }
   }
 
-  function endSession () {
+  function endSession (e) {
+    if (e) e.stopPropagation();
+
     if (!started) return;
 
     started = false;
@@ -123,6 +126,7 @@ window.onload = function () {
     previousDate = date;
   }
 
+  endButton.onclick = endSession;
   moreButton.onclick = toggleDropdown;
   dropdown.onclick = stopPropagation;
   adjust.onchange = updateOptions;

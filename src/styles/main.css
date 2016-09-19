@@ -55,7 +55,19 @@ section {
 
 .bpm {
   font-size: 6rem;
-  padding: 1rem;
+  padding: 0 1rem;
+}
+
+.end {
+  font-size: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  cursor: pointer;
+  color: #000;
+  padding: 0.6rem;
+  margin-top: 2rem;
+  width: 10rem;
+  border: none;
 }
 
 .graph {
@@ -65,7 +77,7 @@ section {
   left: 0;
   top: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .graph svg {
